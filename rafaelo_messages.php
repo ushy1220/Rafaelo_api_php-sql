@@ -16,6 +16,10 @@
 		$email = $_POST['email'];
 		$content = $_POST['content'];
 
+		$name = htmlentities($name, ENT_QUOTES, "UTF-8");
+		$email = htmlentities($email, ENT_QUOTES, "UTF-8");
+		$content = htmlentities($login, ENT_QUOTES, "UTF-8");
+
 		$sql = "INSERT INTO messages(name, email, content) VALUES('$name', '$email', '$content');";
 		$res = mysqli_query($conn, $sql);
 
